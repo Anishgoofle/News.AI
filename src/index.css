@@ -1,6 +1,11 @@
 * {
-  height: 100vh;
   box-sizing: border-box;
+}
+
+#root,
+html,
+body {
+  height: 100vh;
 }
 
 body {

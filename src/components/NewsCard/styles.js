@@ -15,9 +15,12 @@ const styles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'space-between',
         borderBottom: '10px solid white',
+        position: 'relative',
     },
     activeCard: {
-        borderBottom: '10px solid #22289a',
+        transform: 'scale(1.05)',
+        transition: 'transform 0.3s ease-in-out',
+        zIndex: '11'
     },
     grid: {
         display: 'flex',
@@ -34,7 +37,16 @@ const styles = makeStyles({
         padding: '0 16px 8px 16px',
         display: 'flex',
         justifyContent: 'space-between',
+    },
+    overlay: {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        height: '100%',
+        width: '100%',
+        zIndex: '10',
+        backgroundColor: 'rgba(0,0,0,0.5)'
     }
-})
+});
 
 export default styles;

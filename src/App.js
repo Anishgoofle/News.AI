@@ -9,7 +9,7 @@ const App = () => {
     const classes = useStyles();
 
     const [news, setNews] = useState([]);
-
+    const [activeArticle, setActiveArticle] = useState(-1);
 
     useEffect(() => {
         alanBtn({
@@ -17,6 +17,9 @@ const App = () => {
             onCommand: ({ command, savedArticles }) => {
                 if (command === 'headlines') {
                     setNews(savedArticles);
+                    setActiveArticle(-1);
+                } else if (command === 'highlight') {
+                    setActiveArticle(prevActiveArticle => prevActiveArticle + 1);
                 }
             }
         });
@@ -27,7 +30,7 @@ const App = () => {
             <div className={classes.logoContainer}>
                 <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="alan logo" />
             </div>
-            <NewsCards articles={news} />
+            <NewsCards articles={news} activeArticle={activeArticle} />
         </div>
     )
 }

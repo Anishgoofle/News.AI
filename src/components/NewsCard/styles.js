@@ -18,9 +18,7 @@ const styles = makeStyles({
         zIndex: '10'
     },
     activeCard: {
-        transform: 'scale(1.05)',
-        transition: 'transform 0.3s ease-in-out',
-        zIndex: '11'
+        borderBottom: '10px solid #22289a',
     },
     grid: {
         display: 'flex',

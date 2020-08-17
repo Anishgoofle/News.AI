@@ -10,9 +10,8 @@ const App = () => {
 
     const [news, setNews] = useState([]);
     const [activeArticle, setActiveArticle] = useState(-1);
-    const [show, setShow] = useState(false);
 
-    
+
 
     useEffect(() => {
         alanBtn({
@@ -23,18 +22,17 @@ const App = () => {
                     setActiveArticle(-1);
                 } else if (command === 'highlight') {
                     setActiveArticle(prevActiveArticle => prevActiveArticle + 1);
-                    setShow(true);
                 }
             }
         });
     }, []);
 
     return (
-        <div className={show ? classes.overlay : null}>
+        <div>
             <div className={classes.logoContainer}>
                 <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="alan logo" />
             </div>
-            <NewsCards articles={news} activeArticle={activeArticle}/>
+            <NewsCards articles={news} activeArticle={activeArticle} />
         </div>
     )
 }

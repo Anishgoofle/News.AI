@@ -12,9 +12,10 @@ const infoCards = [
 ];
 
 
-const NewsCards = ({ articles, activeArticle }) => {
+const NewsCards = ({ articles, activeArticle, grandParentCallBack }) => {
 
     const classes = useStyles();
+
 
     if (!articles.length) {
         return (
@@ -49,7 +50,7 @@ const NewsCards = ({ articles, activeArticle }) => {
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {articles.map((article, i) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: 'flex' }} key={i}>
-                        <NewsCard article={article} i={i} activeArticle={activeArticle} />
+                        <NewsCard article={article} i={i} activeArticle={activeArticle}/>
                     </Grid>
                 ))}
             </Grid>

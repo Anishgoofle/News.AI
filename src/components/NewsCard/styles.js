@@ -15,7 +15,6 @@ const styles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'space-between',
         borderBottom: '10px solid white',
-        zIndex: '10'
     },
     activeCard: {
         borderBottom: '10px solid #22289a',
